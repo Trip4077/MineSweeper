@@ -1,9 +1,11 @@
 import React from 'react';
+import StartBtn from './StartBtn';
+import './TaskBar.css';
 
 const TaskBar = () => {
   return(
-    <div>
-      TEST
+    <div className='taskbar'>
+      <StartBtn />
     </div>
   );
 }
