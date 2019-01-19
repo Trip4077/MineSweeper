@@ -5,8 +5,8 @@ import icon from '../../images/start-icon.png';
 const StartBtn = props => {
   const Start = styled.button`
     height: 80%;
-    width: 5%;
-    border: 1px outset;
+    width: 5.5%;
+    border: 2.5px outset;
     border-color: white rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.7) white;
     background-color: #c0c0c0;
     position: relative;
@@ -15,7 +15,7 @@ const StartBtn = props => {
     justify-content: space-around;
     align-items: center;
 
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     letter-spacing: 1.5px;
 
     &:before {
@@ -41,10 +41,6 @@ const StartBtn = props => {
       height: 25px;
       width: 25px;
     }
-  `;
-
-  const Time = styled.p`
-
   `;
 
   return(
