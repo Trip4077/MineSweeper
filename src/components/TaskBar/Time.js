@@ -1,21 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import aol from '../../images/AOL.png';
+import mail from '../../images/mail.png';
 
 const TimeBox = styled.div`
   border: 2px inset #8b8b8b;
   background-color: #b5abab;
   height: 80%;
-  width: 7%;
+  width: 8.5%;
+  padding: 0 4px;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   font-size: 2rem;
 
+  div {
+    display: flex;
+    align-items: center;
+  }
+
   img {
     cursor: pointer;
+    margin: 0 2px;
   }
 `;
 
@@ -64,7 +73,10 @@ class Time extends React.Component {
   render() {
     return(
       <TimeBox>
-        <img src={aol} alt="AOL icon - 95" />
+        <div>
+          <img src={mail} alt="Email icon - 95" />
+          <img src={aol} alt="AOL icon - 95" />
+        </div>
         {this.state.time}
       </TimeBox>
     );

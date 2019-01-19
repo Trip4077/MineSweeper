@@ -16,6 +16,7 @@ const StartBtn = props => {
     align-items: center;
 
     font-size: 1.8rem;
+    font-weight: bold;
     letter-spacing: 1.5px;
 
     &:before {
