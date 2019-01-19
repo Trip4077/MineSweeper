@@ -20,3 +20,28 @@
 .highlight {
   background-color: #e8e8e8;
 }
+
+.mini {
+  position: absolute;
+  top: 0px;
+  left: 190px;
+  border: 1px solid black;
+}
+
+.mini div {
+  color: black;
+  display: none;
+}
+
+.mini div:hover {
+  background-color: #000080;
+  color: white;
+}
+
+.mini div:first-child:after {
+  content: '';
+}
+
+.show div {
+  display: flex;
+}
