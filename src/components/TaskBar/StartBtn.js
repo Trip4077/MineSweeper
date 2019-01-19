@@ -19,6 +19,8 @@ const StartBtn = props => {
     font-weight: bold;
     letter-spacing: 1.5px;
 
+    cursor: pointer;
+
     &:before {
       content: " ";
       position: absolute;
