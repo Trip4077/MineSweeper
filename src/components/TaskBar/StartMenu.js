@@ -14,35 +14,43 @@ const StartMenu = props => {
   const menuItems = [
     {
       text: 'Programs',
-      image: programs
+      image: programs,
+      id: 0
     },
     {
       text: 'Favorites',
-      image: favorites
+      image: favorites,
+      id: 1
     },
     {
       text: 'Documents',
-      image: documents
+      image: documents,
+      id: 2
     },
     {
       text: 'Settings',
-      image: settings
+      image: settings,
+      id: 3
     },
     {
       text: 'Find',
-      image: find
+      image: find,
+      id: 4
     },
     {
       text: 'Help',
-      image: help
+      image: help,
+      id: 5
     },
     {
       text: 'Run...',
-      image: run
+      image: run,
+      id: 6
     },
     {
       text: 'Shut Down...',
-      image: shutdown
+      image: shutdown,
+      id: 7
     }];
 
   const Menu = styled.div`
@@ -77,11 +85,18 @@ const StartMenu = props => {
     }
   `;
 
+  let displayStatus;
+
+  if(!props.menuStatus) {
+    displayStatus = 'hidden';
+  }
+
   return(
-    <Menu>
+
+    <Menu className={displayStatus}>
       {menuItems.map(item => {
         return (
-          <MenuItem>
+          <MenuItem key={item.id}>
             <img src={item.image} alt='menu icon' />
             <p>{item.text}</p>
           </MenuItem>

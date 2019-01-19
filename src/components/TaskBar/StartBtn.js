@@ -45,7 +45,7 @@ const StartBtn = props => {
   `;
 
   return(
-    <Start>
+    <Start onClick={props.toggle}>
       <img src={icon} alt='microsoft logo' />
       <p>Start</p>
     </Start>
