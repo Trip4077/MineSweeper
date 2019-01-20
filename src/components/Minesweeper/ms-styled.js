@@ -66,6 +66,12 @@ const Tile = styled.button`
 
   background-color: #bebebe;
 
+  padding: 0;
+
+  img {
+    margin-right: 2px;
+  }
+
   &:active {
     background-color: #bab5b5;
   }
