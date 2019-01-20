@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, MenuItem } from './tb-styled';
+import { Link } from 'react-router-dom';
 
 import minesweeper from '../../images/taskbar/minesweeper.png';
 
@@ -35,6 +36,15 @@ const StartMenu = props => {
               <img src={item.image} alt='menu icon' />
               <p>{item.text}</p>
             </MenuItem>
+          );
+        } else if(item.text === 'Minesweeper') {
+          return (
+            <Link to='/minesweeper'>
+              <MenuItem key={item.id}>
+                <img src={item.image} alt='menu icon' />
+                <p>{item.text}</p>
+              </MenuItem>
+            </Link>
           );
         }
 

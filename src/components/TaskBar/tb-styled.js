@@ -7,6 +7,10 @@ const Menu = styled.div`
   cursor: pointer;
 
   border: 3px outset #808080;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const MenuItem = styled.div`

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import TaskBar from './components/TaskBar/TaskBar';
-import Desktop from './components/Desktop/Desktop';
+import Home from './components/Home/Home';
+import Minesweeper from './components/Minesweeper/Minesweeper';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Desktop />
-        <TaskBar />
+      <div>
+        <Route path='/' component={Home} />
+        <Route path='/minesweeper' component={Minesweeper} />
       </div>
     );
   }
