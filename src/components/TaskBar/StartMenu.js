@@ -1,53 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Menu, MenuItem } from './tb-styled';
 
 import minesweeper from '../../images/minesweeper.png';
 
 const StartMenu = props => {
-
-  const Menu = styled.div`
-    position: absolute;
-    top: -355px;
-    left: 7px;
-    cursor: pointer;
-
-    border: 3px outset #808080;
-  `;
-
-  const MenuItem = styled.div`
-    font-size: 2rem;
-
-    padding: 10px 20px;
-    background-color: #c0c0c0;
-
-    display: flex;
-    align-items: center;
-
-    position: relative;
-
-    p {
-      margin-left: 15px;
-    }
-
-    &:hover {
-      background-color: #000080;
-      color: white;
-    }
-
-    &:last-child {
-      border-top: 1px inset #808080;
-    }
-
-    &:first-child:after {
-      content: '\\25B6';
-      font-size: 1.2rem;
-      font-weight: bold;
-
-      position: absolute;
-      right: 25px;
-      bottom: 14.75px;
-    }
-  `;
 
   let displayStatus;
 
