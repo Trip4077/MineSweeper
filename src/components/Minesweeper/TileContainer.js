@@ -15,7 +15,6 @@ class TileContainer extends React.Component {
   }
 
   mineCheck = () => {
-    const shuffle = this.shuffle;
     const origin = this.props.id;
     const board = this.props.map;
     const neighbors = [];
@@ -43,6 +42,51 @@ class TileContainer extends React.Component {
     this.setState({
       mineContact: mineCount.length
     })
+  }
+
+  tileAction = (e) => {
+    const tile = e.currentTarget;
+    console.log(tile.childNodes[0])
+
+    if(tile.childNodes.length === 0) {
+      tile.classList.add('neutral');
+      return;
+    } else if(!tile.childNodes[0].innerText) {
+      const tiles = tile.parentNode.childNodes;
+      tiles.forEach(tile => {
+        if(tile.childNodes[0]) {
+          tile.childNodes[0].style.display = 'block';
+          this.updateTileStyle(tile.childNodes[0])
+        }
+      });
+      return;
+    } else {
+      this.updateTileStyle(tile.childNodes[0]);
+    }
+  }
+
+  updateTileStyle = (tile) => {
+    switch(tile.innerText) {
+      case '1':
+        tile.style.color = '#0800c6';
+        tile.style.display = 'block';
+        break;
+
+      case '2':
+        tile.style.color = '#286b26';
+        tile.style.display = 'block';
+        break;
+
+      case '3':
+        tile.style.color = '#d20a15';
+        tile.style.display = 'block';
+        break;
+
+      case '4':
+        tile.style.color = '#100784';
+        tile.style.display = 'block';
+        break;
+    }
   }
 
   componentDidMount() {
@@ -95,7 +139,7 @@ class TileContainer extends React.Component {
       display = <img src={mine} alt='mine icon' />
     }
 
-    return <Tile>{display}</Tile>
+    return <Tile onClick={this.tileAction}>{display}</Tile>
   }
 }
 

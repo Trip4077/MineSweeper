@@ -68,8 +68,13 @@ const Tile = styled.button`
 
   padding: 0;
 
+  span {
+    display: none;
+  }
+
   img {
     margin-right: 2px;
+    display: none;
   }
 
   &:active {

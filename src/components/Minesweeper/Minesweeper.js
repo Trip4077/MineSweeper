@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { TopBar, TopBarLogo, TopBarTools, Control } from './ms-styled';
 import { Link } from 'react-router-dom';
+
 import GameBoard from './GameBoard';
+import ScoreBoard from './ScoreBoard';
 
 import minesweeper from '../../images/desktop/winmine.png';
 
@@ -57,7 +60,8 @@ class Minesweeper extends React.Component {
           <p><span>H</span>elp</p>
         </Control>
 
-        <GameBoard board={this.state.boardArr}/>
+        <ScoreBoard stats={this.state}/>
+        <GameBoard board={this.state.boardArr} />
       </div>
     );
   }
