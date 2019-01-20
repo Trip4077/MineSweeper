@@ -1,8 +1,8 @@
 import React from 'react';
 import { TimeBox } from './tb-styled';
 
-import aol from '../../images/AOL.png';
-import mail from '../../images/mail.png';
+import aol from '../../images/taskbar/AOL.png';
+import mail from '../../images/taskbar/mail.png';
 
 class Time extends React.Component {
   constructor(props) {

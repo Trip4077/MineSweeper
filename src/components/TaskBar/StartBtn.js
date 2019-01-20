@@ -1,6 +1,6 @@
 import React from 'react';
 import { Start } from './tb-styled';
-import icon from '../../images/start-icon.png';
+import icon from '../../images/taskbar/start-icon.png';
 
 const StartBtn = props => {
   return(

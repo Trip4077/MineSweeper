@@ -1,11 +1,11 @@
-import shutdown from '../../images/shutdown.png';
-import run from '../../images/run.png';
-import help from '../../images/help.png';
-import find from '../../images/find.png';
-import settings from '../../images/settings.png';
-import documents from '../../images/documents.png';
-import favorites from '../../images/favorites.png';
-import programs from '../../images/programs.png';
+import shutdown from '../../images/taskbar/shutdown.png';
+import run from '../../images/taskbar/run.png';
+import help from '../../images/taskbar/help.png';
+import find from '../../images/taskbar/find.png';
+import settings from '../../images/taskbar/settings.png';
+import documents from '../../images/taskbar/documents.png';
+import favorites from '../../images/taskbar/favorites.png';
+import programs from '../../images/taskbar/programs.png';
 
 const menuData = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, MenuItem } from './tb-styled';
 
-import minesweeper from '../../images/minesweeper.png';
+import minesweeper from '../../images/taskbar/minesweeper.png';
 
 const StartMenu = props => {
 

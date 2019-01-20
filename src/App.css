@@ -56,5 +56,6 @@ html {
    height: 100vh;
    background-color: #008080;
    display: flex;
-   align-items: flex-end;
+	 flex-direction: column;
+   justify-content: flex-end;
 }
