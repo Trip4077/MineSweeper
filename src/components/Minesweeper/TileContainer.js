@@ -14,9 +14,12 @@ class TileContainer extends React.Component {
   }
 
   mineCheck = () => {
+    const shuffle = this.shuffle;
     const origin = this.props.id;
-    const board = this.props.map;
+    const board = shuffle(this.props.map);
     const neighbors = [];
+
+    console.log(board);
 
     neighbors.push(board[origin + 8]);
     neighbors.push(board[origin - 8]);
@@ -41,6 +44,17 @@ class TileContainer extends React.Component {
     this.setState({
       mineContact: mineCount.length
     })
+  }
+
+  shuffle = (a) => {
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
   }
 
   componentDidMount() {
