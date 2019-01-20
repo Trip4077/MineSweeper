@@ -1,0 +1,9 @@
+.minesweeper {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+
+  width: 20%;
+  border: 2px outset #fdfbff;
+  background-color: #c0c1bb;
+}

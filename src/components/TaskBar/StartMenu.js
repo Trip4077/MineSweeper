@@ -39,8 +39,8 @@ const StartMenu = props => {
           );
         } else if(item.text === 'Minesweeper') {
           return (
-            <Link to='/minesweeper'>
-              <MenuItem key={item.id}>
+            <Link to='/minesweeper' key={item.id}>
+              <MenuItem>
                 <img src={item.image} alt='menu icon' />
                 <p>{item.text}</p>
               </MenuItem>
