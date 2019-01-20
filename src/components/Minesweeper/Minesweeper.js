@@ -18,7 +18,8 @@ class Minesweeper extends React.Component {
       score: 0,
       mines: 10,
       flags: 0,
-      boardArr: []
+      boardArr: [],
+      status: true,
     }
   }
 
@@ -38,6 +39,12 @@ class Minesweeper extends React.Component {
      boardArr: boardTemplate
    })
   }
+
+  updateStatus = () => {
+    this.setState(prevState => {
+        return {status: !prevState.status};
+      });
+    }
 
   render() {
     return(
@@ -61,7 +68,7 @@ class Minesweeper extends React.Component {
         </Control>
 
         <ScoreBoard stats={this.state}/>
-        <GameBoard board={this.state.boardArr} />
+        <GameBoard board={this.state.boardArr} statusHandler={this.updateStatus}/>
       </div>
     );
   }

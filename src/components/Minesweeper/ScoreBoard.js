@@ -42,7 +42,7 @@ const Smiles = styled.button`
 const ScoreBoard = props => {
   let btnDisplay = play;
 
-  if(props.play) {
+  if(!props.stats.status) {
     btnDisplay = lost;
   }
 

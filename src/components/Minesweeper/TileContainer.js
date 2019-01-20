@@ -46,19 +46,22 @@ class TileContainer extends React.Component {
 
   tileAction = (e) => {
     const tile = e.currentTarget;
-    console.log(tile.childNodes[0])
 
     if(tile.childNodes.length === 0) {
       tile.classList.add('neutral');
       return;
     } else if(!tile.childNodes[0].innerText) {
+
       const tiles = tile.parentNode.childNodes;
+
       tiles.forEach(tile => {
         if(tile.childNodes[0]) {
           tile.childNodes[0].style.display = 'block';
           this.updateTileStyle(tile.childNodes[0])
+          this.props.statusHandler();
         }
       });
+
       return;
     } else {
       this.updateTileStyle(tile.childNodes[0]);
@@ -85,6 +88,9 @@ class TileContainer extends React.Component {
       case '4':
         tile.style.color = '#100784';
         tile.style.display = 'block';
+        break;
+
+      default:
         break;
     }
   }
