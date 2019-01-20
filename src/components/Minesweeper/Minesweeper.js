@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import { TopBar, TopBarLogo, TopBarTools, Control } from './ms-styled';
 import { Link } from 'react-router-dom';
+import GameBoard from './GameBoard';
 
 import minesweeper from '../../images/desktop/winmine.png';
 
@@ -11,62 +12,31 @@ class Minesweeper extends React.Component {
     super(props);
 
     this.state = {
-
+      score: 0,
+      mines: 10,
+      flags: 0,
+      boardArr: []
     }
   }
 
+  componentDidMount() {
+   const boardTemplate = [
+     0,0,0,0,0,0,0,0,
+     0,0,0,0,0,0,0,1,
+     0,1,0,1,0,1,0,0,
+     0,0,0,0,0,1,0,0,
+     0,0,0,0,0,0,1,0,
+     0,0,1,0,0,0,0,0,
+     0,0,0,0,0,1,0,0,
+     0,0,1,0,0,0,0,1
+   ];
+
+   this.setState({
+     boardArr: boardTemplate
+   })
+  }
+
   render() {
-    const TopBar = styled.div`
-      background-color: #000080;
-      padding: 3px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    `;
-
-    const TopBarLogo = styled.div`
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-
-      width: 40%;
-
-      color: white;
-      font-size: 1.6rem;
-    `;
-
-    const TopBarTools = styled.div`
-      a button, button {
-        background-color: #d0d1cc;
-        font-size: 1.6rem;
-        height: 23px;
-      }
-
-      a button:focus, button:focus {
-        outline: none;
-      }
-
-      button {
-        margin: 0 1px;
-      }
-    `;
-
-    const Control = styled.div`
-      display: flex;
-      align-items: center;
-
-      font-size: 1.6rem;
-
-      p {
-        margin: 5px;
-      }
-
-      span {
-        text-decoration: underline;
-      }
-    `;
-
     return(
       <div className='minesweeper'>
         <TopBar>
@@ -86,6 +56,8 @@ class Minesweeper extends React.Component {
           <p><span>G</span>ame</p>
           <p><span>H</span>elp</p>
         </Control>
+
+        <GameBoard board={this.state.boardArr}/>
       </div>
     );
   }
