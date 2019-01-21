@@ -17,6 +17,12 @@ class TileContainer extends React.Component {
 
   flagTile = (e) => {
     e.preventDefault();
+    this.props.statsHandler.flags(this.state.flagged);
+
+    if(this.props.stats.flags >= 10 && !this.state.flagged) {
+      return;
+    }
+
     this.setState(prevState => {
       return { flagged: !prevState.flagged }
     })
@@ -41,7 +47,7 @@ class TileContainer extends React.Component {
       neighbors.push(board[origin - 7]);
       neighbors.push(board[origin + 1]);
 
-    } else if(origin !== 63) {
+    } else if (origin !== 63) {
       neighbors.push(board[origin - 7]);
     }
 

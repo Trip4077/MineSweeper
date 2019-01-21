@@ -46,7 +46,31 @@ class Minesweeper extends React.Component {
       });
     }
 
+  updateFlags = (flags) => {
+    if(!flags) {
+
+      if(this.state.flags >= 10) {
+        console.log('test')
+        return;
+      }
+
+      this.setState(prevState => {
+        return { flags: prevState.flags += 1};
+      })
+    } else {
+      console.log(false)
+      this.setState(prevState => {
+        return { flags: prevState.flags -= 1};
+      })
+    }
+  }
+
   render() {
+
+    const updateStats = {
+      flags: this.updateFlags
+    }
+
     return(
       <div className='minesweeper'>
         <TopBar>
@@ -68,7 +92,7 @@ class Minesweeper extends React.Component {
         </Control>
 
         <ScoreBoard stats={this.state}/>
-        <GameBoard board={this.state.boardArr} statusHandler={this.updateStatus}/>
+        <GameBoard board={this.state.boardArr} statusHandler={this.updateStatus} stats={this.state} statsHandler={updateStats} />
       </div>
     );
   }
