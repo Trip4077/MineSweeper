@@ -21,6 +21,10 @@ class TileContainer extends React.Component {
 
     if(this.props.stats.flags >= 10 && !this.state.flagged) {
       return;
+    } else if(this.state.flagged) {
+      this.props.statsHandler.mines(this.state.tileType, false);
+    } else {
+      this.props.statsHandler.mines(this.state.tileType, true);
     }
 
     this.setState(prevState => {

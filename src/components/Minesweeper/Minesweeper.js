@@ -50,7 +50,6 @@ class Minesweeper extends React.Component {
     if(!flags) {
 
       if(this.state.flags >= 10) {
-        console.log('test')
         return;
       }
 
@@ -58,9 +57,26 @@ class Minesweeper extends React.Component {
         return { flags: prevState.flags += 1};
       })
     } else {
-      console.log(false)
       this.setState(prevState => {
         return { flags: prevState.flags -= 1};
+      })
+    }
+  }
+
+  updateMines = (tileType, isFlagged) => {
+    if(tileType === 1 && isFlagged) {
+      this.setState(prevState => {
+        return {
+          mines: prevState.mines -= 1,
+          score: prevState.score += 1
+        }
+      })
+    } else if(tileType === 1 && !isFlagged) {
+      this.setState(prevState => {
+        return {
+          mines: prevState.mines += 1,
+          score: prevState.score -= 1
+        }
       })
     }
   }
@@ -68,7 +84,12 @@ class Minesweeper extends React.Component {
   render() {
 
     const updateStats = {
-      flags: this.updateFlags
+      flags: this.updateFlags,
+      mines: this.updateMines
+    }
+
+    if(this.state.mines === 0) {
+      console.log('win')
     }
 
     return(
