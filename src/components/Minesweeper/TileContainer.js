@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tile } from './ms-styled';
 import mine from '../../images/taskbar/minesweeper.png';
+import flag from '../../images/gameboard/flag.png';
 
 class TileContainer extends React.Component {
   constructor(props) {
@@ -12,6 +13,13 @@ class TileContainer extends React.Component {
       flagged: false,
       mineContact: 0,
     }
+  }
+
+  flagTile = (e) => {
+    e.preventDefault();
+    this.setState(prevState => {
+      return { flagged: !prevState.flagged }
+    })
   }
 
   mineCheck = () => {
@@ -69,6 +77,7 @@ class TileContainer extends React.Component {
   }
 
   updateTileStyle = (tile) => {
+
     switch(tile.innerText) {
       case '1':
         tile.style.color = '#0800c6';
@@ -91,6 +100,7 @@ class TileContainer extends React.Component {
         break;
 
       default:
+        tile.style.display = 'block';
         break;
     }
   }
@@ -145,7 +155,11 @@ class TileContainer extends React.Component {
       display = <img src={mine} alt='mine icon' />
     }
 
-    return <Tile onClick={this.tileAction}>{display}</Tile>
+    if(this.state.flagged) {
+      display = <img src={flag} alt='mine icon' style={{display: 'block', height: '20px', width: '20px'}} />;
+    }
+
+    return <Tile onClick={this.tileAction} onContextMenu={this.flagTile}>{display}</Tile>
   }
 }
 

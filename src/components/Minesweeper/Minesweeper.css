@@ -6,3 +6,7 @@
   border: 2px outset #fdfbff;
   background-color: #c0c1bb;
 }
+
+.flag {
+  display: block;
+}
