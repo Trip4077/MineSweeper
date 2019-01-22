@@ -15,8 +15,18 @@ const Score = styled.div`
 `;
 
 const ScoreText = styled.div`
-  font-size: 2rem;
+  font-size: 3em;
+  color: #ff0000;
   letter-spacing: 1px;
+  font-family: 'ZCOOL QingKe HuangYou';
+`;
+
+const ScoreTextContainer = styled.div`
+  background-color: #000;
+  border: 2px inset #fdfbff;
+  width: 25%;
+
+  text-align: center;
 `;
 
 const Smiles = styled.button`
@@ -48,9 +58,15 @@ const ScoreBoard = props => {
 
   return(
     <Score>
-      <ScoreText>{props.stats.score}</ScoreText>
+      <ScoreTextContainer>
+        <ScoreText>{props.stats.score}</ScoreText>
+      </ScoreTextContainer>
+
       <Smiles><img src={btnDisplay} alt="smile" /></Smiles>
-      <ScoreText>{props.stats.mines}</ScoreText>
+
+      <ScoreTextContainer>
+        <ScoreText>{props.stats.mines}</ScoreText>
+      </ScoreTextContainer>
     </Score>
   );
 }
