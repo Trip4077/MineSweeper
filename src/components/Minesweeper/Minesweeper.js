@@ -42,7 +42,7 @@ class Minesweeper extends React.Component {
 
   updateStatus = () => {
     this.setState(prevState => {
-        return {status: !prevState.status};
+        return {status: false};
       });
     }
 
@@ -110,10 +110,6 @@ class Minesweeper extends React.Component {
     const updateStats = {
       flags: this.updateFlags,
       mines: this.updateMines
-    }
-
-    if(this.state.mines === 0) {
-      console.log('win')
     }
 
     return(

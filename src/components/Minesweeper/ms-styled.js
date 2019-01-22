@@ -55,6 +55,8 @@ const BoardContainer = styled.div`
   display: grid;
   grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px;
   grid-template-rows: 25px 25px 25px 25px 25px 25px 25px 25px;
+
+  position: relative;
 `;
 
 const Tile = styled.button`
@@ -132,6 +134,34 @@ const Smiles = styled.button`
   }
 `;
 
+const GameEnd = styled.h2`
+  font-size: 3em;
+  color: #ff0000;
+  letter-spacing: 1px;
+  font-family: 'ZCOOL QingKe HuangYou';
+
+  position: absolute;
+  top: 30%;
+  left: 16%;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 8px;
+`;
+
+const GameWin = styled.h2`
+  font-size: 3em;
+  color: green;
+  letter-spacing: 1px;
+  font-family: 'ZCOOL QingKe HuangYou';
+
+  position: absolute;
+  top: 30%;
+  left: 20%;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 8px;
+`;
+
 export {
   TopBar,
   TopBarLogo,
@@ -143,4 +173,6 @@ export {
   ScoreText,
   ScoreTextContainer,
   Smiles,
+  GameEnd,
+  GameWin
 }

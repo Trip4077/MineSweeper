@@ -76,8 +76,9 @@ class TileContainer extends React.Component {
       tiles.forEach(tile => {
         if(tile.childNodes[0]) {
           tile.childNodes[0].style.display = 'block';
-          this.updateTileStyle(tile.childNodes[0])
           this.props.statusHandler();
+          this.updateTileStyle(tile.childNodes[0])
+
         }
       });
 
