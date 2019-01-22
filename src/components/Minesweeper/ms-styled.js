@@ -73,7 +73,7 @@ const Tile = styled.button`
   }
 
   img {
-    margin-right: 2px;
+    margin-left: 4px;
     display: none;
   }
 

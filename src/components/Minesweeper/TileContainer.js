@@ -68,6 +68,7 @@ class TileContainer extends React.Component {
     if(tile.childNodes.length === 0) {
       tile.classList.add('neutral');
       return;
+
     } else if(!tile.childNodes[0].innerText) {
 
       const tiles = tile.parentNode.childNodes;
@@ -92,25 +93,30 @@ class TileContainer extends React.Component {
       case '1':
         tile.style.color = '#0800c6';
         tile.style.display = 'block';
+        tile.parentNode.style.border = '1px dashed rgba(0, 0, 0, 0.75)';
         break;
 
       case '2':
         tile.style.color = '#286b26';
         tile.style.display = 'block';
+        tile.parentNode.style.border = '1px dashed rgba(0, 0, 0, 0.75)';
         break;
 
       case '3':
         tile.style.color = '#d20a15';
         tile.style.display = 'block';
+        tile.parentNode.style.border = '1px dashed rgba(0, 0, 0, 0.75)';
         break;
 
       case '4':
         tile.style.color = '#100784';
         tile.style.display = 'block';
+        tile.parentNode.style.border = '1px dashed rgba(0, 0, 0, 0.75)';
         break;
 
       default:
         tile.style.display = 'block';
+        tile.parentNode.style.border = '1px dashed rgba(0, 0, 0, 0.75)';
         break;
     }
   }
