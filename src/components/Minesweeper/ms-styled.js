@@ -86,11 +86,61 @@ const Tile = styled.button`
   }
 `;
 
+const Score = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 2px inset #fdfbff;
+  background-color: #bebebe;
+  padding: 3px 0;
+  margin: 7px 0;
+`;
+
+const ScoreText = styled.div`
+  font-size: 3em;
+  color: #ff0000;
+  letter-spacing: 1px;
+  font-family: 'ZCOOL QingKe HuangYou';
+`;
+
+const ScoreTextContainer = styled.div`
+  background-color: #000;
+  border: 2px inset #fdfbff;
+  width: 25%;
+
+  text-align: center;
+`;
+
+const Smiles = styled.button`
+  height: 30px;
+  width: 30px;
+  background-color: #e2e2e0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  img {
+    height: 20px;
+    width: 20px;
+    margin-right: 1.5px;
+  }
+`;
+
 export {
   TopBar,
   TopBarLogo,
   TopBarTools,
   Control,
   BoardContainer,
-  Tile
+  Tile,
+  Score,
+  ScoreText,
+  ScoreTextContainer,
+  Smiles,
 }

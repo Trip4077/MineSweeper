@@ -36,7 +36,7 @@ class Minesweeper extends React.Component {
    ];
 
    this.setState({
-     boardArr: boardTemplate
+     boardArr: this.shuffle(boardTemplate)
    })
   }
 
@@ -81,6 +81,30 @@ class Minesweeper extends React.Component {
     }
   }
 
+  resetGame = () => {
+    this.setState(prevState => {
+      return {
+        score: 0,
+        mines: 10,
+        flags: 0,
+        boardArr: [],
+        status: true,
+      }
+    })
+  }
+
+  shuffle = (arr) => {
+    const a = arr;
+    let j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+  }
+
   render() {
 
     const updateStats = {
@@ -112,8 +136,13 @@ class Minesweeper extends React.Component {
           <p><span>H</span>elp</p>
         </Control>
 
-        <ScoreBoard stats={this.state}/>
-        <GameBoard board={this.state.boardArr} statusHandler={this.updateStatus} stats={this.state} statsHandler={updateStats} />
+        <ScoreBoard stats={this.state} reset={this.resetGame}/>
+
+        <GameBoard board={this.state.boardArr}
+                   statusHandler={this.updateStatus}
+                   stats={this.state}
+                   statsHandler={updateStats}
+                   shuffle={this.shuffle}/>
       </div>
     );
   }
