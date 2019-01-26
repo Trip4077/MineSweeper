@@ -1,7 +1,8 @@
 MineSweeper 95
 ======
 
-###A React SPA
+##A React SPA
+
 #####Dektop Only 
 
 [Play Now](www.minesweeper95.tk)
