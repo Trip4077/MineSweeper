@@ -11,7 +11,7 @@ navigating the start menu.
 Click to test tile, right click to flag tile
 
 
--Built Using ReactJS
--Type-Checking with prop-types
--Styling with styled-components
+..*Built Using ReactJS
+..*Type-Checking with prop-types
+..*Styling with styled-components
 
