@@ -49,8 +49,8 @@ const MenuItem = styled.div`
 `;
 
 const Start = styled.button`
-  height: 80%;
-  width: 5.5%;
+  height: 35px;
+  width: 90px;
   border: 2.5px outset;
   border-color: white rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.7) white;
   background-color: #c0c0c0;
@@ -95,8 +95,8 @@ const Start = styled.button`
 const TimeBox = styled.div`
   border: 2px inset #8b8b8b;
   background-color: #b5abab;
-  height: 80%;
-  width: 8.5%;
+  height: 35px;
+  width: 125px;
   padding: 0 4px;
 
   display: flex;
