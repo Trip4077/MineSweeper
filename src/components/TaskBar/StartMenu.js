@@ -31,7 +31,7 @@ const StartMenu = props => {
 
         if(item.id === 0) {
           return (
-            <MenuItem key={item.id} onMouseOut={mouseGone} onMouseOver={mouseOn}>
+            <MenuItem className='menu-item' key={item.id} onMouseOut={mouseGone} onMouseOver={mouseOn}>
               <StartMenu className='mini' menuStatus={props.menuStatus} menuItems={miniMenu}/>
               <img src={item.image} alt='menu icon' />
               <p>{item.text}</p>

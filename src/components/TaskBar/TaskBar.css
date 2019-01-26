@@ -20,6 +20,10 @@
   background-color: #e8e8e8;
 }
 
+.menu-item {
+  position: relative;
+}
+
 .mini {
   position: absolute;
   top: 0px;
