@@ -103,7 +103,7 @@ const TimeBox = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  font-size: 2rem;
+  font-size: 1.6rem;
 
   div {
     display: flex;
@@ -112,7 +112,16 @@ const TimeBox = styled.div`
 
   img {
     cursor: pointer;
+    margin: 0 4px;
+    width: 20px;
+    height: 15px;
+  }
+
+  img:last-of-type {
+    cursor: pointer;
     margin: 0 2px;
+    width: 20px;
+    height: 25px;
   }
 `;
 
